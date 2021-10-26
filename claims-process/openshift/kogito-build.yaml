@@ -1,0 +1,10 @@
+apiVersion: rhpam.kiegroup.org/v1 # Red Hat build of Kogito API for this service
+kind: KogitoBuild  # Application type
+metadata:
+  name: claims-process  # Application name
+spec:
+  type: RemoteSource
+  mavenMirrorURL: http://nexus.pietersmalan.com:8081/repository/maven-public/
+  gitSource:
+    uri: 'http://git.pietersmalan.com/claims-process'  # Git repository containing application (uses default branch)
+    contextDir: claims-process  # Git folder location of application

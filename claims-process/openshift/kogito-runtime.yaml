@@ -1,0 +1,4 @@
+apiVersion: rhpam.kiegroup.org/v1 # Red Hat build of Kogito API for this microservice
+kind: KogitoRuntime  # Application type
+metadata:
+  name: claims-process  # Application name
