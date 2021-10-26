@@ -4,7 +4,7 @@ metadata:
   name: claims-process  # Application name
 spec:
   type: RemoteSource
-  mavenMirrorURL: http://nexus.pietersmalan.com:8081/repository/maven-public/
+  #mavenMirrorURL: http://nexus.pietersmalan.com:8081/repository/maven-public/
   gitSource:
     uri: 'http://git.pietersmalan.com/claims-process'  # Git repository containing application (uses default branch)
     contextDir: claims-process  # Git folder location of application
