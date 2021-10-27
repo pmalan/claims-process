@@ -60,6 +60,21 @@
       <artifactId>kogito-api</artifactId>
       <version>1.12.0.Final</version>
     </dependency>
+    <dependency>
+        <groupId>ca.uhn.hapi.fhir</groupId>
+        <artifactId>hapi-fhir-converter</artifactId>
+        <version>5.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>ca.uhn.hapi.fhir</groupId>
+      <artifactId>hapi-fhir-base</artifactId>
+      <version>5.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>ca.uhn.hapi.fhir</groupId>
+      <artifactId>hapi-fhir-structures-r4</artifactId>
+      <version>5.5.1</version>
+    </dependency>
    
     <dependency>
       <groupId>io.quarkus</groupId>

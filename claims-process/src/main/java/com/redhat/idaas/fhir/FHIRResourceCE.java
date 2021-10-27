@@ -1,6 +1,6 @@
 package com.redhat.idaas.fhir;
 
-public class FHIRResource {
+public class FHIRResourceCE {
 
     String resourceId;
     String excahngeId;
@@ -13,9 +13,18 @@ public class FHIRResource {
     String operation;
 
     private boolean processed;
+    private boolean eligible;
 
-    public FHIRResource() {
+    public FHIRResourceCE() {
 
+    }
+
+    public boolean isEligible() {
+        return eligible;
+    }
+
+    public void setEligible(boolean eligible) {
+        this.eligible = eligible;
     }
 
     public boolean isProcessed() {

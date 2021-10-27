@@ -1,0 +1,18 @@
+apiVersion: eventing.knative.dev/v1
+kind: Trigger
+metadata:
+  name: claim-process-trigger
+  namespace: idaas
+  labels:
+    eventing.knative.dev/broker: default
+spec:
+  broker: default
+  filter:
+    attributes:
+      type: HL7
+  subscriber:
+    ref:
+      apiVersion: apps/v1
+      kind: Service
+      name: claim-process
+      namespace: idaas
