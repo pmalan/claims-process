@@ -7,11 +7,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native-distroless -t quarkus/claim-process .
+# docker build -f src/main/docker/Dockerfile.native-distroless -t quarkus/claims-process-wf .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/claim-process
+# docker run -i --rm -p 8080:8080 quarkus/claims-process-wf
 #
 ###
 FROM quay.io/quarkus/quarkus-distroless-image:1.0

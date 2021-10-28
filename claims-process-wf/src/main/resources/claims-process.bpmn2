@@ -1,4 +1,4 @@
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_oG1Z8BmkEDqvq6Rmqz7BqA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_Gl6lMBnqEDqFQpe8X8zIPQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_fhirresourceItem" structureRef="com.redhat.idaas.fhir.FHIRResourceCE"/>
   <bpmn2:itemDefinition id="_claimItem" structureRef="org.hl7.fhir.r4.model.Claim"/>
   <bpmn2:itemDefinition id="_eligibleItem" structureRef="Boolean"/>
@@ -12,16 +12,16 @@
   <bpmn2:itemDefinition id="__74B0199C-FFB1-4FD6-A941-F02D6948451A_eligibleOutputXItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="__16B5FF2F-44E7-4701-B35B-4FDF9B08901B_fhirresourceInputXItem" structureRef="com.redhat.idaas.fhir.FHIRResourceCE"/>
   <bpmn2:itemDefinition id="processedclaimType" structureRef="com.redhat.idaas.fhir.FHIRResourceCE"/>
-  <bpmn2:message id="_oG2oEBmkEDqvq6Rmqz7BqA" itemRef="HL7Type" name="HL7"/>
-  <bpmn2:message id="_oG2oERmkEDqvq6Rmqz7BqA" itemRef="processedclaimType" name="processedclaim"/>
+  <bpmn2:message id="_Gl7MQBnqEDqFQpe8X8zIPQ" itemRef="HL7Type" name="HL7"/>
+  <bpmn2:message id="_Gl7zUBnqEDqFQpe8X8zIPQ" itemRef="processedclaimType" name="processedclaim"/>
   <bpmn2:interface id="_F65D60D4-2EA9-4E44-9B6B-20FAB4EE51B5_ServiceInterface" name="com.redhat.idaas.fhir.ValidateClaim" implementationRef="com.redhat.idaas.fhir.ValidateClaim">
     <bpmn2:operation id="_F65D60D4-2EA9-4E44-9B6B-20FAB4EE51B5_ServiceOperation" name="convertJSONFHIR" implementationRef="convertJSONFHIR"/>
   </bpmn2:interface>
   <bpmn2:error id="Error" errorCode="Error"/>
-  <bpmn2:interface id="_74B0199C-FFB1-4FD6-A941-F02D6948451A_ServiceInterface" name="com.redhat.idaas.fhir.Eligibilty" implementationRef="com.redhat.idaas.fhir.Eligibilty">
+  <bpmn2:interface id="_74B0199C-FFB1-4FD6-A941-F02D6948451A_ServiceInterface" name="com.redhat.idaas.fhir.Eligibility" implementationRef="com.redhat.idaas.fhir.Eligibility">
     <bpmn2:operation id="_74B0199C-FFB1-4FD6-A941-F02D6948451A_ServiceOperation" name="checkEligibility" implementationRef="checkEligibility"/>
   </bpmn2:interface>
-  <bpmn2:message id="_oG2oEhmkEDqvq6Rmqz7BqA" itemRef="processedclaimType" name="processedclaim"/>
+  <bpmn2:message id="_Gl7zURnqEDqFQpe8X8zIPQ" itemRef="processedclaimType" name="processedclaim"/>
   <bpmn2:process id="ClaimsProcess" drools:packageName="com.redhat.idaas.fhir" drools:version="1.0" drools:adHoc="false" name="ClaimsProcess" isExecutable="true" processType="Public">
     <bpmn2:property id="fhirresource" itemSubjectRef="_fhirresourceItem" name="fhirresource"/>
     <bpmn2:property id="claim" itemSubjectRef="_claimItem" name="claim"/>
@@ -38,7 +38,7 @@
           <drools:metaValue><![CDATA[No]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.omg.org/spec/FEEL/20140401"><![CDATA[eligible != true]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return eligible==false;]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_F06CDE56-CAAB-4712-9C45-E2F9C055D370" name="Yes" sourceRef="_BC1DF37E-0207-45B6-88CF-8FA67F71D826" targetRef="_809066BF-F31F-4AD3-AEF7-441E693A357F">
       <bpmn2:extensionElements>
@@ -49,7 +49,7 @@
           <drools:metaValue><![CDATA[Yes]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.omg.org/spec/FEEL/20140401"><![CDATA[eligible == true]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.omg.org/spec/FEEL/20140401"><![CDATA[return eligible==true;]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_40E8021F-7163-4BAC-B75D-8119F62FA0C2" sourceRef="_74B0199C-FFB1-4FD6-A941-F02D6948451A" targetRef="_BC1DF37E-0207-45B6-88CF-8FA67F71D826"/>
     <bpmn2:sequenceFlow id="_B844B03A-B07A-45A7-BF32-74C5FD861199" sourceRef="_3FA4C656-6786-4EFA-B2E0-0890F1483800" targetRef="_F598CF90-ADAA-4CB1-9026-292C5C7141A0"/>
@@ -77,7 +77,7 @@
       <bpmn2:inputSet>
         <bpmn2:dataInputRefs>_16B5FF2F-44E7-4701-B35B-4FDF9B08901B_fhirresourceInputX</bpmn2:dataInputRefs>
       </bpmn2:inputSet>
-      <bpmn2:messageEventDefinition drools:msgref="processedclaim" messageRef="_oG2oEhmkEDqvq6Rmqz7BqA"/>
+      <bpmn2:messageEventDefinition drools:msgref="processedclaim" messageRef="_Gl7zURnqEDqFQpe8X8zIPQ"/>
     </bpmn2:endEvent>
     <bpmn2:scriptTask id="_809066BF-F31F-4AD3-AEF7-441E693A357F" name="Fraud Check" scriptFormat="http://www.java.com/java">
       <bpmn2:extensionElements>
@@ -99,7 +99,7 @@
       <bpmn2:outgoing>_F06CDE56-CAAB-4712-9C45-E2F9C055D370</bpmn2:outgoing>
       <bpmn2:outgoing>_A7C71103-7669-4A45-A8DA-0C08322D6E16</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:serviceTask id="_74B0199C-FFB1-4FD6-A941-F02D6948451A" drools:serviceimplementation="Java" drools:serviceinterface="com.redhat.idaas.fhir.Eligibilty" drools:serviceoperation="checkEligibility" name="Verify Eligibility" implementation="Java" operationRef="_74B0199C-FFB1-4FD6-A941-F02D6948451A_ServiceOperation">
+    <bpmn2:serviceTask id="_74B0199C-FFB1-4FD6-A941-F02D6948451A" drools:serviceimplementation="Java" drools:serviceinterface="com.redhat.idaas.fhir.Eligibility" drools:serviceoperation="checkEligibility" name="Verify Eligibility" implementation="Java" operationRef="_74B0199C-FFB1-4FD6-A941-F02D6948451A_ServiceOperation">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Verify Eligibility]]></drools:metaValue>
@@ -185,7 +185,7 @@
       <bpmn2:inputSet>
         <bpmn2:dataInputRefs>_44076F06-605F-49BB-B1D2-8ACBA3BECB6A_ResultInputX</bpmn2:dataInputRefs>
       </bpmn2:inputSet>
-      <bpmn2:messageEventDefinition drools:msgref="processedclaim" messageRef="_oG2oERmkEDqvq6Rmqz7BqA"/>
+      <bpmn2:messageEventDefinition drools:msgref="processedclaim" messageRef="_Gl7zUBnqEDqFQpe8X8zIPQ"/>
     </bpmn2:endEvent>
     <bpmn2:startEvent id="_08ECCCDE-60FF-476C-8077-BC1CB2914B17" name="HL7">
       <bpmn2:extensionElements>
@@ -202,7 +202,7 @@
       <bpmn2:outputSet>
         <bpmn2:dataOutputRefs>_08ECCCDE-60FF-476C-8077-BC1CB2914B17_eventOutputX</bpmn2:dataOutputRefs>
       </bpmn2:outputSet>
-      <bpmn2:messageEventDefinition drools:msgref="HL7" messageRef="_oG2oEBmkEDqvq6Rmqz7BqA"/>
+      <bpmn2:messageEventDefinition drools:msgref="HL7" messageRef="_Gl7MQBnqEDqFQpe8X8zIPQ"/>
     </bpmn2:startEvent>
   </bpmn2:process>
   <bpmndi:BPMNDiagram>
@@ -332,7 +332,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_oG1Z8BmkEDqvq6Rmqz7BqA</bpmn2:source>
-    <bpmn2:target>_oG1Z8BmkEDqvq6Rmqz7BqA</bpmn2:target>
+    <bpmn2:source>_Gl6lMBnqEDqFQpe8X8zIPQ</bpmn2:source>
+    <bpmn2:target>_Gl6lMBnqEDqFQpe8X8zIPQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
