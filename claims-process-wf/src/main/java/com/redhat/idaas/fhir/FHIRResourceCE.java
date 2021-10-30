@@ -12,28 +12,12 @@ public class FHIRResourceCE {
     String correlationId;
     String operation;
 
-    private boolean processed;
-    private boolean eligible;
+    
 
     public FHIRResourceCE() {
 
     }
 
-    public boolean isEligible() {
-        return eligible;
-    }
-
-    public void setEligible(boolean eligible) {
-        this.eligible = eligible;
-    }
-
-    public boolean isProcessed() {
-        return processed;
-    }
-
-    public void setProcessed(boolean processed) {
-        this.processed = processed;
-    }
 
     public String getResourceId() {
         return resourceId;

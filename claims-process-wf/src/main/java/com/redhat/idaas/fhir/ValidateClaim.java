@@ -14,7 +14,7 @@ public class ValidateClaim {
     public Claim convertJSONFHIR(FHIRResourceCE fhir) {
         System.out.println("-------------------------------------------------------------------------------");
         FhirContext ctx = FhirContext.forR4();
-        System.out.println(fhir.getPayload());
+       // System.out.println(fhir.getPayload());
         byte[] decodedBytes = Base64.getDecoder().decode(fhir.getPayload());
         String json = new String(decodedBytes);
         //String json=Base64.getDecoder().decode(fhir.getPayload()).toString();
